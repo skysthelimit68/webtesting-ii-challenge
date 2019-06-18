@@ -4,18 +4,13 @@ import './App.css';
 import Dashboard from './components/Dashboard';
 import Display from './components/Display';
 
-
-
-
-const App = props =>  {
+const App = () =>  {
 
   const [state, setState] = useState({
     balls : 0,
     strikes : 0,
     inning : 1,  // up to 18, odd -> top, even -> bottom, Math.ceil(division) to number of innings
     out: 0   //up to 3 then switching to top/bottom inning
-    
-
   })
 
   const recordBalls = event => {  
@@ -37,12 +32,12 @@ const App = props =>  {
       if(newOut >= 3) {  //end of half inning, switch between top/bottom
         const newInning = state.inning + 1;
         setState({ ...state, balls: 0, strikes: 0, out: 0, inning: newInning})
-        console.log("THREE OUTS!!! The end of half inning!")
-        console.log(`At ${state.inning % 2 === 0 ? "bottom" : "top"} of the ${Math.ceil(state.inning/2)} innings, ${state.out} outs`)
+          console.log("THREE OUTS!!! The end of half inning!")
+          console.log(`At ${newInning % 2 === 0 ? "bottom" : "top"} of the ${Math.ceil(newInning/2)} innings, 0 outs`)
 
       } else {
         setState({ ...state, balls: 0, strikes: 0, out: newOut})
-        console.log(`At ${state.inning % 2 === 0 ? "bottom" : "top"} of the ${Math.ceil(state.inning/2)} innings, ${state.out} outs`)
+        console.log(`At ${state.inning % 2 === 0 ? "bottom" : "top"} of the ${Math.ceil(state.inning/2)} innings, ${newOut} outs`)
 
       }
     } else {

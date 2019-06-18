@@ -11,6 +11,9 @@ class Display extends React.Component {
             <>
             <p>Strikes: {this.props.stat.strikes}</p>
             <p>Balls: {this.props.stat.balls}</p>
+            <p>{this.props.stat.inning % 2 === 0 ? "Bottom" : "Top"} of {Math.ceil(this.props.stat.inning/2)} Inning</p>
+            <p>Outs: {this.props.stat.out}</p>
+            
             </>
         )
     }
