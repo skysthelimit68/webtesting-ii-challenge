@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Dashboard from './components/Dashboard';
@@ -22,7 +21,6 @@ const App = props =>  {
       setState({ ...state, balls: 0, strikes: 0})
     } else {
       setState({ ...state, balls: newCount });
-
     }
   }
 
@@ -33,8 +31,7 @@ const App = props =>  {
       setState({ ...state, balls: 0, strikes: 0})
     } else {
       setState({ ...state, strikes: newCount });
-    }
-    
+    }  
   }
 
   const recordFoul = event => {
