@@ -14,6 +14,7 @@ describe('<App />', () => {
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
+  
 
   describe('strike button', () => {
     //find strike button
